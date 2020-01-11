@@ -1,0 +1,22 @@
+<div class="main">
+	<div class="wrapper">
+		<div class="header">
+			<h3>Header</h3>
+		</div>
+		<div #itemsDiv class="items">
+			<div class="item" *ngFor="let item of items" >
+        <button #button (mouseenter) ="mouseEnter($event,item)" 
+        (mouseout)="mouseOut($event,item)" >
+          {{item}}
+        </button>
+			</div>
+
+      <div @myInsertRemoveTrigger *ngIf="showHover" class="hoverImage"  [ngStyle]="{'left': hoverLeft, 'top': hoverTop}" >
+          
+      </div>
+		</div>
+		<div class="footer">
+      <h3>Footer</h3>
+		</div>
+	</div>
+</div>
